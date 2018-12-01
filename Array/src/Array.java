@@ -82,12 +82,13 @@ public class Array<E> {
      * @param e
      */
     public void add(int index, E e) {
-        if (size == data.length) {
-            throw new IllegalArgumentException("Addlast failed. Array is full");
-        }
-
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("Addlast failed.  Require index >=0 and index<=size");
+        }
+
+        // 扩容
+        if (size == data.length) {
+            resize(2 * data.length);
         }
 
         // 从最后一个位置，看到index, 然后每个元素都向后挪一个位置
@@ -98,6 +99,8 @@ public class Array<E> {
         data[index] = e;
         size++;
     }
+
+
 
     /**
      * @param index
@@ -160,6 +163,19 @@ public class Array<E> {
         }
         size--;
         return ret;
+    }
+
+
+    private void resize(int newCapacity) {
+        int cap = getCapacity();
+        String logStr = String.format("扩容 %d => %d", cap, newCapacity);
+        System.out.println(logStr);
+        E[] newData = (E [])new Object[newCapacity];
+        for (int i = 0; i < size; i++) {
+            newData[i] = data[i];
+        }
+        data = newData;
+
     }
 
     @Override

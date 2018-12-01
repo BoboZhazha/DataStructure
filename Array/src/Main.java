@@ -8,7 +8,7 @@
  */
 public class Main {
     public static void main(String[] args) {
-        Array<Float> arr = new Array(20);
+        Array<Float> arr = new Array<>(3);
         for (int i = 0; i < 10; i++) {
             arr.addLast((float)i);
         }
