@@ -8,9 +8,9 @@ import java.util.Arrays;
  * @Author: Zhang
  * CreateDate：  2018/11/26 17:29
  */
-public class Array {
+public class Array<E> {
 
-    private int[] data;
+    private E[] data;
 
     private int size;
 
@@ -20,7 +20,8 @@ public class Array {
      * @param capacity
      */
     public Array(int capacity) {
-        data = new int[capacity];
+        // JAVA没有new E语法, 所以这样转型
+        data = (E[])new Object[capacity];
         size = 0;
     }
 
@@ -61,7 +62,7 @@ public class Array {
      *
      * @param e
      */
-    public void addLast(int e) {
+    public void addLast(E e) {
         add(size, e);
     }
 
@@ -70,7 +71,7 @@ public class Array {
      *
      * @param e
      */
-    public void addFirst(int e) {
+    public void addFirst(E e) {
         add(0, e);
     }
 
@@ -80,7 +81,7 @@ public class Array {
      * @param index
      * @param e
      */
-    public void add(int index, int e) {
+    public void add(int index, E e) {
         if (size == data.length) {
             throw new IllegalArgumentException("Addlast failed. Array is full");
         }
@@ -102,7 +103,7 @@ public class Array {
      * @param index
      * @return
      */
-    int get(int index) {
+    E get(int index) {
         if (size == data.length) {
             throw new IllegalArgumentException("Addlast failed. Array is full");
         }
@@ -114,7 +115,7 @@ public class Array {
      * @param index
      * @param e
      */
-    void set(int index, int e) {
+    void set(int index, E e) {
         data[index] = e;
     }
 
@@ -122,9 +123,9 @@ public class Array {
      * @param e
      * @return
      */
-    public boolean contains(int e) {
+    public boolean contains(E e) {
         for (int i = 0; i < size; i++) {
-            if (data[i] == e) {
+            if (data[i].equals(e)) {
                 return true;
             }
         }
@@ -135,9 +136,9 @@ public class Array {
      * @param e
      * @return
      */
-    public int find(int e) {
+    public int find(E e) {
         for (int i = 0; i < size; i++) {
-            if (data[i] == e) {
+            if (data[i].equals(e)) {
                 return i;
             }
         }
@@ -149,14 +150,15 @@ public class Array {
      * @param index
      * @return 返回被删除的
      */
-    public int remove(int index) {
+    public E remove(int index) {
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("Addlast failed.  Require index >=0 and index<=size");
         }
-        int ret = data[index];
+        E ret = data[index];
         for (int i = index + 1 ; i < size; i++) {
             data[i-1] = data[i];
         }
+        size--;
         return ret;
     }
 
