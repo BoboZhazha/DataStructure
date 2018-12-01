@@ -1,8 +1,10 @@
+package Array;
+
 import java.util.Arrays;
 
 /**
  * Project：DataStructure
- * ClassName：  Array
+ * ClassName：  Array.Array
  * Description：
  *
  * @Author: Zhang
@@ -101,14 +103,21 @@ public class Array<E> {
     }
 
 
+    public E getFirst() {
+        return get(0);
+    }
+
+    public E getLast() {
+        return get(size - 1);
+    }
 
     /**
      * @param index
      * @return
      */
-    E get(int index) {
+    public E get(int index) {
         if (size == data.length) {
-            throw new IllegalArgumentException("Addlast failed. Array is full");
+            throw new IllegalArgumentException("Addlast failed. Array.Array is full");
         }
         return data[index];
     }
@@ -165,6 +174,13 @@ public class Array<E> {
         return ret;
     }
 
+    public E removeLast() {
+        return this.remove(size-1);
+    }
+
+    public E removeFirst() {
+        return this.remove(0);
+    }
 
     private void resize(int newCapacity) {
         int cap = getCapacity();
@@ -181,7 +197,7 @@ public class Array<E> {
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        res.append(String.format("Array: size =  %d , capacity = %d\n", size, data.length));
+        res.append(String.format("Array.Array: size =  %d , capacity = %d\n", size, data.length));
         res.append("[");
         for (int i = 0; i < size; i++) {
             res.append(data[i]);

@@ -1,3 +1,5 @@
+import Array.Array;
+import Stack.ArrayStack;
 
 /**
  * Project：DataStructure
@@ -8,7 +10,20 @@
  */
 public class Main {
     public static void main(String[] args) {
-        Array<Float> arr = new Array<>(3);
+        ArrayStack<Integer> s = new ArrayStack<Integer>();
+        for (int i = 0; i < 10; i++) {
+            s.push(i);
+            System.out.println(s);
+        }
+
+        s.pop();
+        System.out.println(s);
+
+    }
+
+
+    public static void tArray() {
+        Array<Float> arr = new Array<Float>(3);
         for (int i = 0; i < 10; i++) {
             arr.addLast((float)i);
         }
@@ -21,7 +36,6 @@ public class Main {
 
         arr.addLast(9999f);
         System.out.println(arr);
-
     }
 
 }
