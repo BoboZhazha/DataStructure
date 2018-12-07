@@ -19,6 +19,15 @@ public class Main {
         s.pop();
         System.out.println(s);
 
+        s.peek();
+        System.out.println(s);
+
+        s.push(333);
+        System.out.println(s);
+
+        s.push(444);
+        System.out.println(s);
+
     }
 
 

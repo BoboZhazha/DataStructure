@@ -115,10 +115,9 @@ public class Array<E> {
      * @param index
      * @return
      */
-    public E get(int index) {
-        if (size == data.length) {
-            throw new IllegalArgumentException("Addlast failed. Array.Array is full");
-        }
+    public E get(int index){
+        if(index < 0 || index >= size)
+            throw new IllegalArgumentException("Get failed. Index is illegal.");
         return data[index];
     }
 
@@ -128,6 +127,9 @@ public class Array<E> {
      * @param e
      */
     void set(int index, E e) {
+        if (index < 0 || index >= size) {
+            throw new IllegalArgumentException("Set failed, Index is illegal");
+        }
         data[index] = e;
     }
 
