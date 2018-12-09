@@ -4,7 +4,7 @@ import Array.Array;
 
 public class ArrayStack<E> implements Stack<E> {
 
-    Array<E> array;
+    private Array<E> array;
 
     public ArrayStack(int capacicy) {
         this.array = new Array<E>(capacicy);
