@@ -2,7 +2,7 @@ package Queue;
 
 import Array.Array;
 
-public class ArrayQueue<E> implements Queue<E>{
+public class ArrayQueue<E> implements Queue<E> {
 
     private Array<E> array;
 
@@ -20,6 +20,10 @@ public class ArrayQueue<E> implements Queue<E>{
     public void enqueue(E e) {
         array.addLast(e);
 
+    }
+
+    public int getCapacity() {
+        return array.getCapacity();
     }
 
     // 出队
@@ -48,7 +52,7 @@ public class ArrayQueue<E> implements Queue<E>{
     public String toString() {
         StringBuilder res = new StringBuilder();
         res.append("ArrayQuene: ");
-        res.append("head: [");
+        res.append("front: [");
         for (int i = 0; i < array.getSize(); i++) {
             res.append(array.get(i));
             if (i != array.getSize() - 1) {
