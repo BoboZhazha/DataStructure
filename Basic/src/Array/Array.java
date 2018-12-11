@@ -186,8 +186,8 @@ public class Array<E> {
 
     private void resize(int newCapacity) {
         int cap = getCapacity();
-        String logStr = String.format("扩容 %d => %d", cap, newCapacity);
-        System.out.println(logStr);
+//        String logStr = String.format("扩容 %d => %d", cap, newCapacity);
+//        System.out.println(logStr);
         E[] newData = (E [])new Object[newCapacity];
         for (int i = 0; i < size; i++) {
             newData[i] = data[i];
