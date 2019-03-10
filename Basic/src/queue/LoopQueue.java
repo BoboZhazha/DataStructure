@@ -1,7 +1,5 @@
-package Queue;
+package queue;
 
-
-import java.util.Arrays;
 
 /**
  * 对于循环队列来说, 判断队列是否为满 (tail +1) % data.length == front

@@ -1,5 +1,5 @@
-import Array.Array;
-import Stack.ArrayStack;
+import array.Array;
+import stack.ArrayStack;
 
 /**
  * Project：DataStructure

@@ -1,10 +1,8 @@
-package Array;
-
-import java.util.Arrays;
+package array;
 
 /**
  * Project：DataStructure
- * ClassName：  Array.Array
+ * ClassName：  array.array
  * Description：
  *
  * @Author: Zhang
@@ -199,7 +197,7 @@ public class Array<E> {
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        res.append(String.format("Array.Array: size =  %d , capacity = %d\n", size, data.length));
+        res.append(String.format("array.array: size =  %d , capacity = %d\n", size, data.length));
         res.append("[");
         for (int i = 0; i < size; i++) {
             res.append(data[i]);

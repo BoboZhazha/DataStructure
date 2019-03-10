@@ -1,6 +1,6 @@
-package Queue;
+package queue;
 
-import Array.Array;
+import array.Array;
 
 public class ArrayQueue<E> implements Queue<E> {
 
